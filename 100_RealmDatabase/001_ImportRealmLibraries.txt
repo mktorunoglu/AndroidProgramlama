@@ -1,0 +1,35 @@
+1) build.gradle (Project: ApplicationName)
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+        maven {
+            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
+        }
+    }
+    dependencies {
+        classpath "io.realm:realm-gradle-plugin:7.0.0-beta-SNAPSHOT"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        maven {
+            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
+        }
+    }
+}
+
+2) build.gradle (Module: app)
+
+apply plugin: 'realm-android'
+
+3) AndroidManifest.xml
+
+<application
+  android:name=".MyApplication"
+  ...
+/>
